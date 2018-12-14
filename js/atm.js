@@ -385,5 +385,5 @@ function goBack() {
     dashboard();
 };
 function SignOut() {
-    window.location.href = 'atm.html';
+    window.location.href = 'index.html';
 };
