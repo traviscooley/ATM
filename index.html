@@ -4,170 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ATM Pseudocode</title>
+    <title>ATM</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/atm.css">
-    <style>
-        .page-header {
-            background-color: #aadff2;
-            box-shadow: 0 25px 35px white;
-            border: 4px dotted white;
-            padding: 0;
-            font-size: 52px;
-            color: #32aec9;
-            text-align: center;
-            line-height: 2
-        }
-        .indent {
-            margin-left: 30px;
-            list-style-type: circle; 
-        }
-        .strike {
-            text-decoration: line-through;
-        }
-        .pass {
-            background: green;
-            color: #fff;
-        }
-        .pseudoCode {
-            background-color: #34aec9;
-            box-shadow: 0 25px 35px white;
-            border-radius: 2% 2% 0 0;
-            border: 4px dotted white;
-            margin-bottom: 60px;
-        }
-        h2, h3, ul{
-            position: relative;
-            left: 150px;
-        }
-        .TODO {
-            border-bottom: 4px dotted white;
-            border-right: 4px dotted white;
-            height: 340px;
-        }
-        .VARIABLES {
-            border-bottom: 4px dotted white;
-            height: 340px;
-        }
-    </style>
+    
 </head>
-<body class="pseudoBody">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <h1 class="page-header">Fast Cash ATM</h1>
-            </div>
-        </div>
-        <div class="row pseudoCode">
-            <div class="col-sm-6 TODO">
-                <h2><strong>TODO</strong></h2>
-                <ul>
-                    <li class="strike">language -> assume always English</li>
-                    <li class="strike">make two step verification</li>
-                    <li class="strike indent">make card number input</li>
-                    <li class="strike indent">make pin input</li>
-                    <li class="strike">make a withdrawal</li>
-                    <li class="indent strike">checking/savings</li>
-                    <li class="strike">make a deposit</li>
-                    <li class="indent strike">checking/savings</li>
-                    <li class="strike">check balance</li>
-                </ul>
-            </div>
-            <div class="col-sm-6 VARIABLES">
-                <h2><strong>VARIABLES</strong></h2>
-                <ul>
-                    <li>SET USER account</li>
-                    <li class="indent">name</li>
-                    <li class="indent">card number</li>
-                    <li class="indent">pin</li>
-                    <li class="indent">accountBalance</li>
-                    <li>SET withdrawn equal to zero</li>
-                    <li>SET deposited equal to zero</li>
-                </ul>
-            </div>
-            <div class="col-sm-12">
-                <h2><strong>LOGIC</strong></h2>
-                <h3>LANGUAGE</h3>
-                <ul>
-                    <li>DISPLAY languages to choose from</li>
-                    <li>English</li>
-                    <li>Inglés</li>
-                    <li>Anglais</li>
-                    <li>英語</li>
-                    <li>SET choosen language throughout process</li>
-                    <li>GOTO ENTER CARD screen</li>
-                </ul>
-                <h3>ENTER CARD</h3>
-                <ul>
-                    <li>DISPLAY "Enter your card"</li>
-                    <li>INPUT card</li>
-                    <li>IF card is not ok</li>
-                    <li class="indent">DISPLAY "Card is invalid. Please try again."</li>
-                    <li class="indent">GOTO ENTER CARD screen</li>
-                    <li>ELSE if ok</li>
-                    <li class="indent">GOTO PIN screen</li>
-                </ul>
-                <h3>PIN</h3>
-                <ul>
-                    <li>DISPLAY "Enter your PIN code"</li>
-                    <li>INPUT pin</li>
-                    <li>IF pin is not ok</li>
-                    <li class="indent">DISPLAY "PIN is invalid. Please try again."</li>
-                    <li class="indent">GOTO PIN screen</li>
-                    <li>ELSE if ok</li>
-                    <li class="indent">GOTO DASHBOARD</li>
-                </ul>
-                <h3>DASHBOARD</h3>
-                <ul>
-                    <li>DISPLAY "Welcome: USER"</li>
-                    <li>DISPLAY transaction option withdrawal</li>
-                    <li>IF choice withdrawal</li>
-                    <li class="indent">GOTO WITHDRAWAL screen</li>
-                    <li>DISPLAY transaction option deposit</li>
-                    <li>IF choice deposit</li>
-                    <li class="indent">GOTO DEPOSIT screen</li>
-                    <li>DISPLAY transaction option check balance</li>
-                    <li>IF choice check balance</li>
-                    <li class="indent">GOTO CHECK BALANCE screen</li>
-                </ul>
-                <h3 id="withdrawal">WITHDRAWAL</h3>
-                <ul>
-                    <li>DISPLAY "How much would you like to withdrawal from accountType"</li>
-                    <li>DISPLAY amount choices</li>
-                    <li>IF choice picked</li>
-                    <li class="indent">DISPLAY new accountBalance</li>
-                    <li class="indent">DISPLAY withdrawn amount</li>
-                </ul>
-                <h3 id="deposit">DEPOSIT</h3>
-                <ul>
-                    <li>DISPLAY "How much would you like to deposit from accountType"</li>
-                    <li>DISPLAY amount choices</li>
-                    <li>IF choice picked</li>
-                    <li class="indent">DISPLAY new accountBalance</li>
-                    <li class="indent">DISPLAY deposited amount</li>
-                </ul>
-                <h3>CHECKING/SAVING</h3>
-                <ul>
-                    <li>DISPLAY "Which accountType do you want to withdrawal/deposit from"</li>
-                    <li>DISPLAY accountType choices</li>
-                    <li>IF choice Checking</li>
-                    <li class="indent">SET accountType to Checking</li>
-                    <li class="indent">GOTO WITHDRAWAL/DEPOSIT</li>
-                    <li>IF choice Savings</li>
-                    <li class="indent">SET accountType to Savings</li>
-                    <li class="indent">GOTO WITHDRAWAL/DEPOSIT</li>
-                </ul>
-                <h3>CHECK BALANCE</h3>
-                <ul>
-                    <li>DISPLAY USER account</li>
-                    <li class="indent">First Name</li>
-                    <li class="indent">Last Name</li>
-                    <li class="indent">Card Number</li>
-                    <li class="indent">PIN</li>
-                    <li class="indent">accountBalance -> Checking/Saving</li>
-                </ul>
-            </div>
-        </div>
+<body>
+    <div class="header">
+        <h1 class="header-img"><img src="images/atm.png" alt="ATM"></h1>
     </div>
+    <div class="container">
+        <div class="wrapper">
+            <div class="screen">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="inner-screen">
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    <button class="option" onclick="enterCardScreen()"></button>
+                                    <button class="option" onclick="enterCardScreen()"></button>
+                                    <button class="option" onclick="enterCardScreen()"></button>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="display-screen">
+                                        <h2 class="prompt" id="prompt">Choose language</h2>
+                                        <span class="" id="inputScreen" >
+                                            <div id="output"></div>
+                                        </span>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <p class="leftChoice choices" id="choices">English</p>
+                                                <p class="leftChoice choices" id="choices">Inglés</p>
+                                                <p class="leftChoice choices" id="choices">Anglais</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <p class="rightChoice choices" id="choices">英語</p>
+                                                <p class="rightChoice choices" id="choices"></p>
+                                                <p class="rightChoice choices" id="choices"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-1">
+                                    <button class="option" onclick="enterCardScreen()"></button>
+                                    <button class="option" onclick=""></button>
+                                    <button class="option" onclick=""></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dispenser"></div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="pre-card"></div>
+                                <div class="card"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="pinpad">
+                                    <button class="key" id="1" value="1" onclick="">1</button>
+                                    <button class="key" id="2" value="2" onclick="">2</button>
+                                    <button class="key" id="3" value="3" onclick="">3</button>
+                                    <button class="key" id="4" value="4" onclick="">4</button>
+                                    <button class="key" id="5" value="5" onclick="">5</button>
+                                    <button class="key" id="6" value="8" onclick="">8</button>
+                                    <button class="key" id="7" value="6" onclick="">6</button>
+                                    <button class="key" id="8" value="7" onclick="">7</button>
+                                    <button class="key" id="9" value="9" onclick="">9</button>
+                                    <button class="keyC" onclick="">X</button>
+                                    <button class="key0" id="0" value="0" onclick="">0</button>
+                                    <button class="keyCH" onclick="">&lt;</button>
+                                    <button class="keyE" onclick="">O</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom"></div>
+    </div>
+    <script src="js/atm.js"></script>
 </body>
 </html>
